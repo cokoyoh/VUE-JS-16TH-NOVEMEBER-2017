@@ -4,6 +4,9 @@ dist/
 npm-debug.log
 yarn-error.log
 
+#copies of files
+src/App-copy.vue
+
 # Editor directories and files
 .idea
 *.suo
