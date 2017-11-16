@@ -1,13 +1,20 @@
 <template>
     <div id = "app" class = "app">
-        <div class="button success">Foundation</div>
+        <nav-bar></nav-bar>
+        <tasks></tasks>
     </div>
 </template>
 
 <script>
+    import Navbar from './components/Navbar.vue'
+    import Tasks from './components/Tasks.vue'
     export default {
         data() {
             return {}
+        },
+        components:{
+            'nav-bar' : Navbar,
+            'tasks' : Tasks
         }
     }
 </script>
