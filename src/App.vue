@@ -1,47 +1,41 @@
 <template>
-    <div id = "app">
-        <img src = "./assets/logo.png">
-        <h1>{{ msg }} {{name}}</h1>
+    <div id = "app" class = "app">
+        <input type = "text" id = "input" v-model = "message">
+        <p>The value of this input is {{message}}</p>
+
+        <div class = "interns">
+            <h4>The Interns Names are</h4>
+            <ul v-for="intern in interns.names">
+                <li>{{intern}}</li>
+            </ul>
+        </div>
+
+        <div class="conditionals">
+
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'app',
         data() {
             return {
-                msg: 'Welcome to Your Vue.js App',
-                name: 'cokoyoh'
+                message: "Welcome to vue Charles",
+
+                interns: {
+                    names: ['charles', 'salome', 'the nyamu', 'caro', 'kabiru', 'douglas', 'maina', 'mwiti']
+                },
+
+                marks:{
+                    'cokoyoh': 78,
+                    'yoda': 99,
+                    'shangri-La': 100
+                }
             }
         }
     }
 </script>
 
 <style lang = "scss">
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
 
-    h1, h2 {
-        font-weight: normal;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    li {
-        display: inline-block;
-        margin: 0 10px;
-    }
-
-    a {
-        color: #42b983;
-    }
 </style>
