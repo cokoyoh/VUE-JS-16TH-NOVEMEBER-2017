@@ -75,10 +75,10 @@
                 e.preventDefault();
                 console.log("method called here");
                 this.tasks.unshift({
-                    title: this.tasks.title,
-                    description: this.tasks.description,
-                    date: this.tasks.date,
-                    status: this.tasks.status,
+                    title: this.title,
+                    description: this.description,
+                    date: this.date,
+                    status: this.status,
                 });
                 this.title = '';
                 this.description ='';
