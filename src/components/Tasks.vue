@@ -23,25 +23,25 @@
                                 <div class = "row">
                                     <label>Task
                                         <input type = "text" placeholder = "Title of the task..."
-                                               v-model = "tasks.title"/>
+                                               v-model = "title"/>
                                     </label>
                                 </div>
                                 <div class = "row">
                                     <label>Description
                                         <textarea placeholder = "What do you want to do?" rows = "5"
-                                                  v-model = "tasks.description"></textarea>
+                                                  v-model = "description"></textarea>
                                     </label>
                                 </div>
                             </div>
                             <div class = "large-6 medium-6 columns">
                                 <div class = "row">
                                     <label>Date
-                                        <input type = "date" placeholder = "Pick date" v-model = "tasks.date">
+                                        <input type = "date" placeholder = "Pick date" v-model = "date">
                                     </label>
                                 </div>
                                 <div class = "row">
                                     <label>Status
-                                        <select v-model = "tasks.status">
+                                        <select v-model = "status">
                                             <option value = "incomplete" selected>Incomplete</option>
                                             <option value = "completed">Completed</option>
                                         </select>
@@ -64,6 +64,7 @@
     export default {
         data() {
             return {
+                title: '', description: '', date: '', status: '',
                 tasks: [
                     {'title': '', 'description': '', 'date': '', 'status': ''},
                 ]
@@ -73,12 +74,16 @@
             addNewTask: function (e) {
                 e.preventDefault();
                 console.log("method called here");
-                this.tasks.push({
+                this.tasks.unshift({
                     title: this.tasks.title,
                     description: this.tasks.description,
                     date: this.tasks.date,
                     status: this.tasks.status,
                 });
+                this.title = '';
+                this.description ='';
+                this.status = '';
+                this.date =''
             }
         }
     }
